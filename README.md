@@ -8,7 +8,7 @@ Tracker API contains thre micro services and its API end points.
 
 ## How to run
 
-There are three bat files in the root directory of the repo, eachone will build and run the API in Kestrel dev server.
+There are three bat files in the root directory of the repo, each one will build and run the API in Kestrel dev server.
 
 Then the API will be accessible in,
   1. Location Service - https://localhost:5001 
