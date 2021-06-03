@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="MockQueryable.Moq" Version="5.0.0" />
+    <PackageReference Include="Moq" Version="4.16.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tracker.User.API\Tracker.User.API.csproj" />
+    <ProjectReference Include="..\Tracker.User.Data\Tracker.User.Data.csproj" />
+    <ProjectReference Include="..\Tracker.User.DTO\Tracker.User.DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Tracker.User.Data">
+      <HintPath>..\Tracker.User.Service\bin\Debug\netcoreapp3.1\Tracker.User.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Tracker.User.DTO">
+      <HintPath>..\Tracker.User.Service\bin\Debug\netcoreapp3.1\Tracker.User.DTO.dll</HintPath>
+    </Reference>
+    <Reference Include="Tracker.User.Service">
+      <HintPath>..\Tracker.User.Service\bin\Debug\netcoreapp3.1\Tracker.User.Service.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appSettings.Test.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

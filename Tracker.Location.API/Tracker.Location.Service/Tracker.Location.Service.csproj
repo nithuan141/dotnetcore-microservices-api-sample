@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApiBase\ApiBase.csproj" />
+    <ProjectReference Include="..\Tracker.Location.DTO\Tracker.Location.DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Tracker.Location.Data">
+      <HintPath>..\Tracker.Location.Data\bin\Debug\netcoreapp3.1\Tracker.Location.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

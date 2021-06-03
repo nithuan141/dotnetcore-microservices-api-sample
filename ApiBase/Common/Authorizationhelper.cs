@@ -18,14 +18,14 @@ namespace ApiBase.Common
         /// <summary>
         /// Httpcontext extension method to validate whether the authorized user is accessing the resouces of self or not.
         /// <param name="httpContext">The http context</param>
-        /// <param name="userId">The user id of the resource owner.</param>
+        /// <param name="userName">The user name of the resource owner.</param>
         /// <returns></returns>
-        public static async Task ValidateSelfAccess(this HttpContext httpContext, Guid userId)
+        public static async Task ValidateSelfAccess(this HttpContext httpContext, string userName)
         {
             var user = await GetUser(httpContext);
-            var loggedinUserId = user.Claims.First(claim => claim.Type == "nameid")?.Value;
+            var loggedinUserId = user.Claims.First(claim => claim.Type == "unique_name")?.Value;
 
-            if (loggedinUserId != userId.ToString())
+            if (loggedinUserId != userName)
             {
                 throw new UnauthorizedAccessException("Not autherized to access this resource.");
             }
@@ -34,15 +34,15 @@ namespace ApiBase.Common
         /// <summary>
         /// Httpcontext extension method to validate whether the authorized user is accessing the resouces of self or not.
         /// <param name="httpContext">The http context</param>
-        /// <param name="userId">The user id of the resource owner.</param>
+        /// <param name="userName">The user name of the resource owner.</param>
         /// <returns></returns>
-        public static async Task ValidateSelfOrAdminAccess(this HttpContext httpContext, Guid? userId)
+        public static async Task ValidateSelfOrAdminAccess(this HttpContext httpContext, string userName = "")
         {
             var user = await GetUser(httpContext);
-            var loggedinUserId = user.Claims.First(claim => claim.Type == "nameid")?.Value;
+            var loggedinUser = user.Claims.First(claim => claim.Type == "unique_name")?.Value;
             var role = user.Claims.First(claim => claim.Type == "role")?.Value;
 
-            if (role != "Admin" && !userId.HasValue && loggedinUserId != userId.ToString())
+            if (role != "Admin" && loggedinUser != userName)
             {
                 throw new UnauthorizedAccessException("Not autherized to access this resource.");
             }

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApiBase\ApiBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Tracker.Vehicle.Data">
+      <HintPath>..\Tracker.Vehicle.Data\bin\Debug\netcoreapp3.1\Tracker.Vehicle.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Tracker.Vehicle.DTO">
+      <HintPath>..\Tracker.Vehicle.DTO\bin\Debug\netcoreapp3.1\Tracker.Vehicle.DTO.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
