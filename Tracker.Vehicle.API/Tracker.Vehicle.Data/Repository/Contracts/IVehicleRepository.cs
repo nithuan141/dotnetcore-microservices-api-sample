@@ -8,5 +8,6 @@ namespace Tracker.Vehicle.Data.Repository
 {
     public interface IVehicleRepository: IRepositoryBase<Tracker.Vehicle.Data.Models.Vehicle>
     {
+        Task<bool> CreateUserForVehicle(Models.Vehicle vehicle, string token);
     }
 }

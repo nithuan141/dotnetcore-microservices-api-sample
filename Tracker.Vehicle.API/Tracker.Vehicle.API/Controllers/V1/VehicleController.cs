@@ -27,7 +27,7 @@ namespace Tracker.Vehicle.API.Controllers.V1
 
         // POST api/Vehicle
         [HttpPost]
-        //[Authorize(Roles="Admin")]
+        [Authorize(Roles="Admin")]
         public async Task<IActionResult> Post([FromBody] VehicleDTO VehicleDto)
         {
             var token = await this.HttpContext.GetTokenAsync("access_token");

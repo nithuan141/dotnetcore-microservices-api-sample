@@ -42,10 +42,10 @@ namespace Tracker.Vehicle.Service
         /// <returns></returns>
         public async Task<VehicleDTO> Createvehicle(VehicleDTO vehicleDTO, string token)
         {
-            var vehicle = this.mapper.Map<Tracker.Vehicle.Data.Models.Vehicle>(vehicleDTO);
+            var vehicle = this.mapper.Map<Data.Models.Vehicle>(vehicleDTO);
             await this.vehicleRepository.Create(vehicle);
             vehicleDTO.VehicleId = vehicle.VehicleId;
-            var userCreated = await CreateUserForVehicle(vehicleDTO, token);
+            var userCreated = await this.vehicleRepository.CreateUserForVehicle(vehicle, token);
             return vehicleDTO;
         }
 
@@ -108,28 +108,6 @@ namespace Tracker.Vehicle.Service
             }
 
             return this.mapper.Map<LocationDTO>(location);
-        }
-
-
-        /// <summary>
-        /// Call the user create API and create user for the new vehicle
-        /// </summary>
-        /// <returns></returns>
-        private  async Task<bool> CreateUserForVehicle(VehicleDTO vehicleDTO, string token)
-        {
-            string userCreateApi = this.configuration.GetSection("UserAPI:create").Value;
-            using (var httpClinet = new HttpClient())
-            {
-                httpClinet.DefaultRequestHeaders.Clear();
-                httpClinet.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
-                var userData = new { UserName = vehicleDTO.VehicleNo, Password= "Default@123", Role="Vehicle", Status=1, CreateBy= "Vehicle Service", CreateDate = DateTime.UtcNow };
-                var response = await httpClinet.PostAsync(userCreateApi, new StringContent(JsonConvert.SerializeObject(userData), Encoding.UTF8, "application/json"));
-                if (response.IsSuccessStatusCode)
-                {
-                    return true;
-                }
-                return false;
-            }
         }
     }
 }

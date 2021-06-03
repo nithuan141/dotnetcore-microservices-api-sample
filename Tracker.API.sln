@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tracker.User.API", "Tracker
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tracker.User.Service.Test", "Tracker.User.API\Tracker.User.Service.Test\Tracker.User.Service.Test.csproj", "{6709774B-E593-4C7B-A5DD-17A0F81AE122}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker.Vehicle.Test", "Tracker.Vehicle.API\Tracker.Vehicle.Test\Tracker.Vehicle.Test.csproj", "{8B1D1081-00C9-41A2-BAA5-D8958FC20413}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{6709774B-E593-4C7B-A5DD-17A0F81AE122}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6709774B-E593-4C7B-A5DD-17A0F81AE122}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6709774B-E593-4C7B-A5DD-17A0F81AE122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1D1081-00C9-41A2-BAA5-D8958FC20413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1D1081-00C9-41A2-BAA5-D8958FC20413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1D1081-00C9-41A2-BAA5-D8958FC20413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1D1081-00C9-41A2-BAA5-D8958FC20413}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +123,7 @@ Global
 		{0E9584CE-76C8-4A21-922E-15CB9F2236FC} = {8DE0CF6E-E55E-4DDA-83CC-A8F353AB4625}
 		{9FEB6342-1212-46AF-9249-BAEE303924F3} = {8DE0CF6E-E55E-4DDA-83CC-A8F353AB4625}
 		{6709774B-E593-4C7B-A5DD-17A0F81AE122} = {8DE0CF6E-E55E-4DDA-83CC-A8F353AB4625}
+		{8B1D1081-00C9-41A2-BAA5-D8958FC20413} = {F19052A5-565F-4177-B1A8-B5263FD0CE6D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4291ED55-3588-4503-B2F6-11B613FD041B}
