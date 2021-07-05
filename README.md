@@ -1,6 +1,6 @@
 # Tracker.API
 
-Tracker API contains thre micro services and its API end points.
+Tracker API contains three micro services and its API end points.
 
 1.	**User Service** – This API provides end point for the authentication of a user and creating a use (which is accessible only for admins), it is connected to a SQL DB.
 2.	**Vehicle API** – This API provides end point to create a vehicle and know the current location of a vehicle as well as the position on a particular date and time. This API is connected to the Mongo DB, also using a Map Box API to find the location by providing co-ordinates.
