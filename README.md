@@ -1,3 +1,5 @@
+![.NET](https://github.com/nithuan141/dotnetcore-microservices-api-sample/workflows/.NET/badge.svg?branch=master)
+
 # Tracker.API
 
 Tracker API contains three micro services and its API end points.
